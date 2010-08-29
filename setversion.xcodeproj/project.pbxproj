@@ -3,25 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		650086E01003478B00BC26B0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650086DF1003478B00BC26B0 /* CoreServices.framework */; };
+		6505EAF6122AE15400AB940A /* setversion in Install to Developer usr local bin */ = {isa = PBXBuildFile; fileRef = 65B03112100ACE6100CF7E52 /* setversion */; };
 		65B03273100AD29E00CF7E52 /* setversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B03271100AD29E00CF7E52 /* setversion.m */; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
 		8DD76F9F0486AA7600D96B5E /* setversion.1 in Copy man page */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* setversion.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6564B4FE101E062700046955 /* Copy version.sh */ = {
+		6564B4FE101E062700046955 /* Install to Developer usr local bin */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 8;
 			dstPath = /Developer/usr/local/bin;
 			dstSubfolderSpec = 0;
 			files = (
+				6505EAF6122AE15400AB940A /* setversion in Install to Developer usr local bin */,
 			);
-			name = "Copy version.sh";
+			name = "Install to Developer usr local bin";
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		8DD76F9E0486AA7600D96B5E /* Copy man page */ = {
@@ -138,7 +140,7 @@
 				8DD76F990486AA7600D96B5E /* Sources */,
 				8DD76F9B0486AA7600D96B5E /* Frameworks */,
 				8DD76F9E0486AA7600D96B5E /* Copy man page */,
-				6564B4FE101E062700046955 /* Copy version.sh */,
+				6564B4FE101E062700046955 /* Install to Developer usr local bin */,
 			);
 			buildRules = (
 			);
@@ -155,8 +157,11 @@
 /* Begin PBXProject section */
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
 			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "setversion" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 08FB7794FE84155DC02AAC07 /* setversion */;
 			projectDirPath = "";
@@ -213,38 +218,41 @@
 		1DEB927908733DD40010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
 		1DEB927A08733DD40010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
 		650088CF1003F45800BC26B0 /* Install */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 			};
 			name = Install;
 		};

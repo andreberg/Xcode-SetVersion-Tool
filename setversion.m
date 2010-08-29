@@ -25,7 +25,7 @@ static NSString * kSVCFBundleVersionKey             = @"CFBundleVersion";
 static NSString * kSVCFBundleShortVersionStringKey  = @"CFBundleShortVersionString";
 static NSString * kSVCFBundleVersionTotalKey        = @"CFBundleVersionTotal";
 
-// Strip hyphens from a ISO8601 YYYY-MM-DD date
+
 char * builddate(char * restrict isodate) {
 
     char * result = isodate;
@@ -325,7 +325,7 @@ int main (int argc, char * const argv[]) {
                 char shortVersionCString[16];
                 float shortVersion = (((strtod([shortVersionString UTF8String], NULL) * 1000) + increment_) / 1000);
                 
-                snprintf(shortVersionCString, 16, "%.*f", incrFieldWidth, shortVersion);
+                snprintf(shortVersionCString, 16, "%.*f", (int)incrFieldWidth, shortVersion);
                 
                 if (DEBUG) {
                     NSLog(@"shortVersion: before = %@, after = %s\n", shortVersionString, shortVersionCString);
