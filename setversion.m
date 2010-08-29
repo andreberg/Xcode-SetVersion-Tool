@@ -6,48 +6,56 @@
 //  Copyright 2008 Berg Media. All rights reserved.
 //
 
-#include <string.h>
-#include <errno.h>
-#include <err.h>
 
 #import <Foundation/Foundation.h>
 #import <CoreServices/CoreServices.h>
 
-// the following four (well, two really..) defines can be used to
-// set a fractional build version which increases with each passing day...
-#define DATE            ([[[NSCalendarDate calendarDate] descriptionWithCalendarFormat:@"%Y-%m-%d"] UTF8String])
-#define DAYZERO         183
-#define DAYNOW          [[NSCalendarDate calendarDate] dayOfYear]
-#define SV_VERSION      (double)((DAYNOW-DAYZERO) * 1000) / 100000
-#define SV_COMPILEDATE  [[[NSCalendarDate calendarDate] descriptionWithCalendarFormat:@"%Y%m%d"]\
-cStringUsingEncoding:NSASCIIStringEncoding]
+#include <string.h>
+#include <errno.h>
+#include <err.h>
 
-// ofc, nothing is stopping us from just using an invariant define :)
-#define SV_VERSION_CONST     "0.5"
-#define SV_NAME_CONST        "setversion"
+#define SV_VERSION_CONST        "0.5"
+#define SV_NAME_CONST           "setversion"
+#define SV_DATE_CONST           "2009-07-27"
+#define SV_CR_YEARS_CONST       "2009-2010"
 
 #define strequal(a,b)	(!strcmp((a),(b)))
 
+static NSString * kSVCFBundleVersionKey             = @"CFBundleVersion";
+static NSString * kSVCFBundleShortVersionStringKey  = @"CFBundleShortVersionString";
+static NSString * kSVCFBundleVersionTotalKey        = @"CFBundleVersionTotal";
 
-static NSString * kSVCFBundleVersionKey = @"CFBundleVersion";
-static NSString * kSVCFBundleShortVersionStringKey = @"CFBundleShortVersionString";
-static NSString * kSVCFBundleVersionTotalKey = @"CFBundleVersionTotal";
+// Strip hyphens from a ISO8601 YYYY-MM-DD date
+char * builddate(char * restrict isodate) {
+
+    char * result = isodate;
+    
+    char * year, * month, * day;
+    char sep[] = "-";
+    
+    size_t slen = strlen(isodate);
+    
+    year  = strtok(isodate, sep);
+    month = strtok(NULL, sep);
+    day   = strtok(NULL, "");
+    
+    snprintf(result, slen-1, "%s%s%s", year, month, day);
+    
+    return result;
+}
+
 
 const char * progname(void) {
     
     const char * result = __FILE__;
     
-    NSString * name = [[[NSString stringWithCString:(result) 
-                                           encoding:NSUTF8StringEncoding] lastPathComponent] 
-                                                stringByDeletingPathExtension];
+    NSString * name = [[[NSString stringWithUTF8String:(result)] 
+                        lastPathComponent] 
+                            stringByDeletingPathExtension];
     char buf[BUFSIZ];
     BOOL success = [name getCString:buf 
                           maxLength:BUFSIZ-1 
                            encoding:NSUTF8StringEncoding];
-    
-    //     NSLog(@"name = %@", name);
-    //     NSLog(@"success = %s", success == YES ? "YES" : "NO");
-    //     NSLog(@"buf = %s", buf);
     
     if (success) {
         result = buf;
@@ -56,6 +64,7 @@ const char * progname(void) {
     return result;
 }
 
+
 void printUsage(FILE * filedesc) {
     
     const char usage[] = "\n"
@@ -63,7 +72,7 @@ void printUsage(FILE * filedesc) {
     "   "SV_NAME_CONST" -- Xcode helper tool for updating property lists\n"
     "\n"
     "   Created by André Berg on %s.\n"                   
-    "   Copyright 2009 Berg Media. All rights reserved.\n"
+    "   Copyright "SV_CR_YEARS_CONST" Berg Media. All rights reserved.\n"
     "\n"
     "   USAGE: "SV_NAME_CONST" [-n <int threshold>] [-i <int increment>] <plist> -OR- \n"
     "          "SV_NAME_CONST" -k <key> <value> [<key> <value> ...]  <plist> \n"
@@ -139,12 +148,12 @@ void printUsage(FILE * filedesc) {
     "       man plist(5)\n"
     "\n";
     
-    fprintf(filedesc, usage, DATE);
+    fprintf(filedesc, usage, SV_DATE_CONST);
 }
 
 void printVersion(FILE * filedesc) {
-    
-    fprintf(filedesc, "%s v%s (%s)\n", SV_NAME_CONST, SV_VERSION_CONST, SV_COMPILEDATE);
+    char date[] = SV_DATE_CONST;
+    fprintf(filedesc, "%s v%s (%s)\n", SV_NAME_CONST, SV_VERSION_CONST, builddate(date));
 }
 
 
@@ -215,7 +224,7 @@ int main (int argc, char * const argv[]) {
         exit(EXIT_FAILURE);
     }
     
-    NSString * plistArg = [NSString stringWithCString:argv[argc-1]];       
+    NSString * plistArg = [NSString stringWithUTF8String:argv[argc-1]];       
     NSString * plistBefore = [NSString string];
     NSString * plistAfter = [NSString string];
     
