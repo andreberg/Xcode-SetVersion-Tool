@@ -25,11 +25,11 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>15</string>
+	<string>18</string>
 	<key>CFBundleVersion2</key>
 	<integer>3</integer>
 	<key>CFBundleVersionTotal</key>
-	<integer>272</integer>
+	<integer>275</integer>
 	<key>FloatKey</key>
 	<real>1.02</real>
 	<key>IntKey</key>
