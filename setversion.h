@@ -14,29 +14,36 @@
 #import <CoreServices/CoreServices.h>
 
 /*!
- * @function progname
- * @abstract Returns a program name based on the file name of the source file
+ * @fn builddate
+ * Strip hyphens from a date.
+ * @param isodate YYYY-MM-DD date string
+ * @return YYYYMMDD date string
+ */
+char * builddate(char * restrict isodate);
+
+/*!
+ * @fn progname
+ * Returns a program name based on the file name of the source file
  * @param    name description
- * @result   String with program name
+ * @return   String with program name
  */
 const char * progname(void);
 
 /*!
- * @function printUsage
- * @abstract Shows program usage
- * @discussion Prints a precomposed and hardwired function internal const string
- * to the file descriptor supplied by user.
+ * @fn printUsage
+ * Show program usage
+ * @discussion Prints a precomposed usage string to the file descriptor supplied by user.
  * @param    filedesc the file descriptor to write to
- * @result   void
+ * @return   void
  */
 void printUsage(FILE * filedesc);
 
 /*!
- * @function printVersion
- * @abstract Shows program version
- * @discussion Prints a precomposed and hardwired function internal const string
- * to the file descriptor supplied by user.
+ * @fn printVersion
+ * Show program version
+ * @discussion Prints a precomposed version string to the file descriptor supplied by user.
  * @param    filedesc the file descriptor to write to
- * @result   void
+ * @return   void
  */
 void printVersion(FILE * filedesc);
+
