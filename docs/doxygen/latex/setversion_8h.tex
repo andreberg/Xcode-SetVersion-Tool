@@ -1,0 +1,63 @@
+\hypertarget{setversion_8h}{
+\section{/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h File Reference}
+\label{setversion_8h}\index{/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h@{/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h}}
+}
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$errno.h$>$}\par
+{\tt \#include $<$err.h$>$}\par
+{\tt \#import $<$Foundation/Foundation.h$>$}\par
+{\tt \#import $<$CoreServices/CoreServices.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+const char $\ast$ \hyperlink{setversion_8h_2b451b0eb1279a151b7af0e0c053e58f}{progname} (void)
+\item 
+void \hyperlink{setversion_8h_05770f9d85d7d17c0d09a239248dad3b}{printUsage} (FILE $\ast$filedesc)
+\item 
+void \hyperlink{setversion_8h_c8d75cef28eafe4e76a52a0d413317e1}{printVersion} (FILE $\ast$filedesc)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{setversion_8h_05770f9d85d7d17c0d09a239248dad3b}{
+\index{setversion.h@{setversion.h}!printUsage@{printUsage}}
+\index{printUsage@{printUsage}!setversion.h@{setversion.h}}
+\subsubsection[printUsage]{\setlength{\rightskip}{0pt plus 5cm}void printUsage (FILE $\ast$ {\em filedesc})}}
+\label{setversion_8h_05770f9d85d7d17c0d09a239248dad3b}
+
+
+printUsage  Shows program usage  Prints a precomposed and hardwired function internal const string to the file descriptor supplied by user. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em filedesc}]the file descriptor to write to \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]void \end{Desc}
+\hypertarget{setversion_8h_c8d75cef28eafe4e76a52a0d413317e1}{
+\index{setversion.h@{setversion.h}!printVersion@{printVersion}}
+\index{printVersion@{printVersion}!setversion.h@{setversion.h}}
+\subsubsection[printVersion]{\setlength{\rightskip}{0pt plus 5cm}void printVersion (FILE $\ast$ {\em filedesc})}}
+\label{setversion_8h_c8d75cef28eafe4e76a52a0d413317e1}
+
+
+printVersion  Shows program version  Prints a precomposed and hardwired function internal const string to the file descriptor supplied by user. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em filedesc}]the file descriptor to write to \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]void \end{Desc}
+\hypertarget{setversion_8h_2b451b0eb1279a151b7af0e0c053e58f}{
+\index{setversion.h@{setversion.h}!progname@{progname}}
+\index{progname@{progname}!setversion.h@{setversion.h}}
+\subsubsection[progname]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ progname (void)}}
+\label{setversion_8h_2b451b0eb1279a151b7af0e0c053e58f}
+
+
+progname  Returns a program name based on the file name of the source file \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]description \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]String with program name \end{Desc}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.6">
+  <compounddef id="dir_7785b53bf6a57f010515b0c94a6050e1" kind="dir">
+    <compoundname>/Users/andre/Documents/Xcode/Command Line Utility/Foundation/</compoundname>
+    <innerdir refid="dir_9b02330fe84f04901770012fc6c18085">/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/"/>
+  </compounddef>
+</doxygen>

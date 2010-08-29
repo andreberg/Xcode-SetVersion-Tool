@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.6">
+  <compounddef id="dir_dd38e093be09b4b34fda967bc3bf4851" kind="dir">
+    <compoundname>/Users/andre/Documents/Xcode/</compoundname>
+    <innerdir refid="dir_485475299ad9686c3563d60fb3e3627f">/Users/andre/Documents/Xcode/Command Line Utility/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/andre/Documents/Xcode/"/>
+  </compounddef>
+</doxygen>

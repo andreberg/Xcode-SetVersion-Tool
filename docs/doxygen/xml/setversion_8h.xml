@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.6">
+  <compounddef id="setversion_8h" kind="file">
+    <compoundname>setversion.h</compoundname>
+    <includes local="no">string.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">err.h</includes>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes local="no">CoreServices/CoreServices.h</includes>
+    <includedby refid="setversion_8m" local="yes">/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.m</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>errno.h</label>
+      </node>
+      <node id="5">
+        <label>CoreServices/CoreServices.h</label>
+      </node>
+      <node id="1">
+        <label>string.h</label>
+      </node>
+      <node id="0">
+        <label>/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h</label>
+        <link refid="setversion.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>err.h</label>
+      </node>
+      <node id="4">
+        <label>Foundation/Foundation.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="setversion_8h_12b451b0eb1279a151b7af0e0c053e58f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* progname</definition>
+        <argsstring>(void)</argsstring>
+        <name>progname</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>progname  Returns a program name based on the file name of the source file <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>description </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String with program name </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h" line="22" bodyfile="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.m" bodystart="27" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="setversion_8h_105770f9d85d7d17c0d09a239248dad3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printUsage</definition>
+        <argsstring>(FILE *filedesc)</argsstring>
+        <name>printUsage</name>
+        <param>
+          <type>FILE *</type>
+          <declname>filedesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>printUsage  Shows program usage  Prints a precomposed and hardwired function internal const string to the file descriptor supplied by user. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filedesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor to write to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h" line="32" bodyfile="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.m" bodystart="51" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="setversion_8h_1c8d75cef28eafe4e76a52a0d413317e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printVersion</definition>
+        <argsstring>(FILE *filedesc)</argsstring>
+        <name>printVersion</name>
+        <param>
+          <type>FILE *</type>
+          <declname>filedesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>printVersion  Shows program version  Prints a precomposed and hardwired function internal const string to the file descriptor supplied by user. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filedesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor to write to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h" line="42" bodyfile="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.m" bodystart="112" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>setversion.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>setversion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Created<sp/>by<sp/>Andre<sp/>Berg<sp/>on<sp/>04.07.09.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>2008<sp/>Berg<sp/>Media.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;err.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&lt;Foundation/Foundation.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&lt;CoreServices/CoreServices.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>progname(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printUsage(FILE<sp/>*<sp/>filedesc);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printVersion(FILE<sp/>*<sp/>filedesc);</highlight></codeline>
+    </programlisting>
+    <location file="/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h"/>
+  </compounddef>
+</doxygen>

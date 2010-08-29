@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.5.6">
+  <compound refid="setversion_8h" kind="file"><name>setversion.h</name>
+    <member refid="setversion_8h_12b451b0eb1279a151b7af0e0c053e58f" kind="function"><name>progname</name></member>
+    <member refid="setversion_8h_105770f9d85d7d17c0d09a239248dad3b" kind="function"><name>printUsage</name></member>
+    <member refid="setversion_8h_1c8d75cef28eafe4e76a52a0d413317e1" kind="function"><name>printVersion</name></member>
+  </compound>
+  <compound refid="setversion_8m" kind="file"><name>setversion.m</name>
+    <member refid="setversion_8m_1fca970c1a0aec38136229202f888e945" kind="define"><name>DAYZERO</name></member>
+    <member refid="setversion_8m_18b67079ad0637eddae46f905560a9a51" kind="define"><name>DAYNOW</name></member>
+    <member refid="setversion_8m_1717c5ecf75056c1696eef9de679042a6" kind="define"><name>SV_VERSION</name></member>
+    <member refid="setversion_8m_152e5c17170a07619904fde77c8431d13" kind="define"><name>SV_COMPILEDATE</name></member>
+    <member refid="setversion_8m_13e9ba74200f356fa77c224224e7f993a" kind="define"><name>SV_VERSION_CONST</name></member>
+    <member refid="setversion_8m_170276af6aaa5248ae1816461c43c37cb" kind="define"><name>SV_NAME_CONST</name></member>
+    <member refid="setversion_8m_1991df84e1583da786e368435b9bc59a6" kind="define"><name>strequal</name></member>
+    <member refid="setversion_8m_12b451b0eb1279a151b7af0e0c053e58f" kind="function"><name>progname</name></member>
+    <member refid="setversion_8m_105770f9d85d7d17c0d09a239248dad3b" kind="function"><name>printUsage</name></member>
+    <member refid="setversion_8m_1c8d75cef28eafe4e76a52a0d413317e1" kind="function"><name>printVersion</name></member>
+    <member refid="setversion_8m_1c0f2228420376f4db7e1274f2b41667c" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_4dd37c93a71a6c31c8984957d659c38d" kind="dir"><name>/Users/andre/</name>
+  </compound>
+  <compound refid="dir_485475299ad9686c3563d60fb3e3627f" kind="dir"><name>/Users/andre/Documents/Xcode/Command Line Utility/</name>
+  </compound>
+  <compound refid="dir_39fb89ded24664d325608112c0298d91" kind="dir"><name>/Users/andre/Documents/</name>
+  </compound>
+  <compound refid="dir_7785b53bf6a57f010515b0c94a6050e1" kind="dir"><name>/Users/andre/Documents/Xcode/Command Line Utility/Foundation/</name>
+  </compound>
+  <compound refid="dir_9b02330fe84f04901770012fc6c18085" kind="dir"><name>/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/</name>
+  </compound>
+  <compound refid="dir_9e51036813d6151dfecc72d5fa7c02b3" kind="dir"><name>/Users/</name>
+  </compound>
+  <compound refid="dir_dd38e093be09b4b34fda967bc3bf4851" kind="dir"><name>/Users/andre/Documents/Xcode/</name>
+  </compound>
+</doxygenindex>

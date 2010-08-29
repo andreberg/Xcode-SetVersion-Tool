@@ -1,0 +1,82 @@
+.TH "/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h" 3 "7 Jul 2009" "Version 0.1" "setversion" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/andre/Documents/Xcode/Command Line Utility/Foundation/setversion/setversion.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string.h>\fP
+.br
+\fC#include <errno.h>\fP
+.br
+\fC#include <err.h>\fP
+.br
+\fC#import <Foundation/Foundation.h>\fP
+.br
+\fC#import <CoreServices/CoreServices.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBprogname\fP (void)"
+.br
+.ti -1c
+.RI "void \fBprintUsage\fP (FILE *filedesc)"
+.br
+.ti -1c
+.RI "void \fBprintVersion\fP (FILE *filedesc)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void printUsage (FILE * filedesc)"
+.PP
+printUsage  Shows program usage  Prints a precomposed and hardwired function internal const string to the file descriptor supplied by user. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfiledesc\fP the file descriptor to write to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void printVersion (FILE * filedesc)"
+.PP
+printVersion  Shows program version  Prints a precomposed and hardwired function internal const string to the file descriptor supplied by user. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfiledesc\fP the file descriptor to write to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "const char* progname (void)"
+.PP
+progname  Returns a program name based on the file name of the source file 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP description 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+String with program name 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for setversion from the source code.
