@@ -30,6 +30,8 @@
 	<integer>3</integer>
 	<key>CFBundleVersionTotal</key>
 	<integer>275</integer>
+	<key>DateKey</key>
+	<date>2010-11-15T05:23:40Z</date>
 	<key>FloatKey</key>
 	<real>1.02</real>
 	<key>IntKey</key>
@@ -40,6 +42,8 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>ProjectVersionStringKey</key>
+	<string>v0.2 r10</string>
 	<key>StringKey</key>
 	<string>StringValue</string>
 </dict>

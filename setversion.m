@@ -14,9 +14,9 @@
 #include <errno.h>
 #include <err.h>
 
-#define SV_VERSION_CONST        "0.5"
+#define SV_VERSION_CONST        "0.6"
 #define SV_NAME_CONST           "setversion"
-#define SV_DATE_CONST           "2009-07-27"
+#define SV_DATE_CONST           "2010-11-15"
 #define SV_CR_YEARS_CONST       "2009-2010"
 
 #define strequal(a,b)	(!strcmp((a),(b)))
@@ -85,12 +85,9 @@ void printUsage(FILE * filedesc) {
     "       Each <key> in <plist> will be set to <value> until no more pairs\n"
     "       are left.\n"
     "\n"
-    "       NOTE: At the moment only values of type string, float/double, int/long\n"
-    "       and BOOL (true/false) are supported! (YES/NO are string values treated as BOOL)\n"
-    "\n"
-    "       NOTE 2: If you supply real numbers, be aware that those are subject to\n"
-    "       IEE754 FP inaccuracies, which happen in the conversion from string to real.\n"
-    "       If you need exact numbers you might want to use a string instead.\n"
+    "       NOTE: At the moment only values of type String, Number (Real or Integer),\n"
+    "       Boolean (true/false or YES/NO) and Date (format: YYYY-MM-DD HH:MM:SS ±HHMM)\n"
+    "       are supported! Currently unsupported: Dictionary, Array and Data.\n"
     "\n"
     "       In \"Increment\" mode (-n) you specify a number, which defines at what\n"
     "       intervals 'CFBundleShortVersionString' will be incremented by 0.1 or\n"
@@ -257,29 +254,42 @@ int main (int argc, char * const argv[]) {
             NSString * keyArg = [NSString stringWithCString:argv[0] encoding:NSUTF8StringEncoding];
             NSString * valueArg = [NSString stringWithCString:argv[1] encoding:NSUTF8StringEncoding];
             
+            char * const curArg = argv[1];
+            
             @try {
                 // wonky way of detecting a real
-                if (strnstr(argv[1], ".", strlen(argv[1])) != NULL) {
-                    double dnum = (strtod(argv[1], NULL));
+                if ((curArg[0] == '.' && isdigit(curArg[1])) ||
+                    (curArg[1] == '.' && isdigit(curArg[2]))) {
+                    double dnum = (strtod(curArg, NULL));
                     if (dnum != 0 && (errno != EINVAL || errno != ERANGE)) {
                         [plistDict setObject:[NSNumber numberWithDouble:dnum] 
                                       forKey:keyArg];
                     }
                 } else {
-                    long lnum = (strtol(argv[1], NULL, 10));
-                    if (lnum != 0 && (errno != EINVAL || errno != ERANGE)) {
-                        [plistDict setObject:[NSNumber numberWithLong:lnum] 
-                                      forKey:keyArg];
+                    // try strict ISO 8601 date strings
+                    NSDate * date = [NSDate dateWithString:valueArg];
+                    if (date) {
+                        [plistDict setObject:date forKey:keyArg];
                     } else {
-                        // we do not handle YES/NO here as plists seem to set YES or NO
-                        // as string value
-                        if ([valueArg isEqualToString:@"true"]) {
-                            [plistDict setObject:[NSNumber numberWithBool:YES] forKey:keyArg];
-                        } else if ([valueArg isEqualToString:@"false"]) {
-                            [plistDict setObject:[NSNumber numberWithBool:NO] forKey:keyArg];
+                        long lnum = (strtol(curArg, NULL, 10));
+                        if (lnum != 0 && (errno != EINVAL || errno != ERANGE)) {
+                            [plistDict setObject:[NSNumber numberWithLong:lnum] 
+                                          forKey:keyArg];
                         } else {
-                            [plistDict setObject:valueArg forKey:keyArg];
-                        }    
+                            if ([valueArg isEqualToString:@"true"] ||
+                                [valueArg isEqualToString:@"YES"]) {
+                                [plistDict setObject:[NSNumber numberWithBool:YES] forKey:keyArg];
+                            } else if ([valueArg isEqualToString:@"false"] ||
+                                       [valueArg isEqualToString:@"NO"]) {
+                                [plistDict setObject:[NSNumber numberWithBool:NO] forKey:keyArg];
+                            } else {
+                                // finally: if both number conversions failed
+                                // and the arg is also not true/false/YES/NO
+                                // which would indicate a Boolean value, just
+                                // set the arg as string
+                                [plistDict setObject:valueArg forKey:keyArg];
+                            }
+                        }
                     }
                 }
             }
@@ -290,7 +300,6 @@ int main (int argc, char * const argv[]) {
             argc -= 2;
             argv += 2;
         }
-        
     } else { // increment version mode
         @try {
             
