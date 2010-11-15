@@ -16,12 +16,9 @@
 	    Each <key> in <plist> will be set to <value> until no more pairs
 	    are left.
 
-	    NOTE: At the moment only values of type string, float/double, int/long
-	    and BOOL (true/false) are supported! (YES/NO are string values treated as BOOL)
-
-	    NOTE 2: If you supply real numbers, be aware that those are subject to
-	    IEE754 FP inaccuracies, which happen in the conversion from string to real.
-	    If you need exact numbers you might want to use a string instead.
+	    Note: At the moment only values of type String, Number (Real or Integer),
+        Boolean (true/false or YES/NO) and Date (format: YYYY-MM-DD HH:MM:SS ±HHMM)
+        are supported! Currently unsupported: Dictionary, Array and Data.
 
 	    In "Increment" mode (-n) you specify a number, which defines at what
 	    intervals 'CFBundleShortVersionString' will be incremented by 0.1 or
@@ -35,7 +32,7 @@
 	    Another key 'CFBundleVersionTotal' is set to the total amount of builds
 	    since setversion was added to the build process.
 
-	    NOTE: Default mode is "Increment" if no argument other than <plist>
+	    Note: Default mode is "Increment" if no argument other than <plist>
 
 	OPTIONS:
 	    -V, --version        Display version and exit
